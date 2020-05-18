@@ -1,0 +1,116 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[spanish,es-tabla]{babel} %Ponemos es-tabla para que en la tabla con label diga Tabla en vez de Cuadro
+\usepackage[T1]{fontenc} %Parece necesario para escribir > <
+\usepackage{amsmath,amssymb,amsfonts,latexsym,cancel} %Paquetes matemáticos
+
+\usepackage{graphicx} %Para poner imágenes
+\usepackage{float} %Para poner la imagen o tabla donde estamos con una H
+%\usepackage{subfigure} %Poner varias imágenes juntas, comando \subfigure
+%\usepackage{epstopdf} %Para usar fotos en formato .eps
+
+%\usepackage{array} %Para usar m{ancho}, centrando verticalmente el texto de tablas
+%\usepackage{longtable} %Hacer tablas largas
+%\newcolumntype{E}{>{$} c <{$}} %Hemos creado un nuevo tipo de columna. ahora, al poner E (letra de nuestra elección) la columna correspondiente estará en modo matemático. DEPENDE DEL PACKAGE ARRAY.
+%\setcounter{MaxMatrixCols}{40} %Matrices con más columnas
+%\usepackage{bm} %Comando \bm{}, negritas en textos matemáticos
+
+\PassOptionsToPackage{hyphens}{url} %Para que los enlaces no se salgan del borde. Poner \sloppy\url{}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=blue]{hyperref} %Hipervínculos, así como enlazar partes, citas, etc del mismo documento. Para enlaces: \href{https://www.youtube.com/}{Youtube}
+
+\usepackage{multicol} %Para dividir el texto en columnas
+\usepackage{titlesec}
+\titleformat{\section}[block]{\large\bfseries\centering}{\thesection.}{1mm}{} %Centra las secciones y las deja bonitas. REQUIERE TITLESEC
+\titleformat{\subsection}[block]{\bfseries\centering}{\thesubsection.}{1mm}{}
+\usepackage[left=2cm,right=2cm,top=2.5cm,bottom=3cm]{geometry} %Limitar bordes. Puede ponerse también con lmargin, rmargin.
+\parindent =0cm %Cambiar todas las sangrías
+\usepackage{fancyhdr} %Un formato guay para papers
+\pagestyle{fancy} %Que use dicho formato
+\fancyhead{} %Eliminar definiciones previas 
+\fancyhead[c]{TITULO}
+\fancyhead[r]{Universidad de Valladolid}
+\fancyfoot{}
+\fancyfoot[r]{\thepage} %El comando \thepage pone la página
+\fancyfoot[l]{Pablo Gila Herranz}
+\renewcommand{\headrulewidth}{0.9pt} %Cambiar grosor línea arriba, o eliminarla (0pt)
+\renewcommand{\footrulewidth}{0.5pt} %Crear y editar línea de abajo
+
+\begin{document}
+\begin{titlepage} %Primera página aparte con el título
+\begin{center} %Para centrar el texto
+\vspace*{2\baselineskip} %Avanza filas. Si está al principio, hay que poner *
+\hrule height 3pt
+\vspace*{0.5\baselineskip}
+{\Huge \textbf{Técnicas experimentales en Física III}}\\[0.1cm]
+{\large \textbf{UNIVERSIDAD DE VALLADOLID}}
+\vspace*{0.5\baselineskip}
+\hrule
+\vspace*{6\baselineskip}
+\includegraphics[width=7cm]{fotos/escudo}\\
+\vspace*{4.5\baselineskip}
+{\Huge \textbf{TÍTULO\\Y TÍTULO:\\[0.5cm]MÁS TÍTULO\\}}
+\vfill %Desplaza hasta el final de la página
+\textit{Pablo Gila Herranz}\\
+%\today %Muestra la fecha
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+\thispagestyle{empty} %Quitar el formato en esta página
+\newpage
+\setcounter{page}{1} %Que no empiece la primera página en el índice
+
+\renewcommand{\abstractname}{Abstract} %Para que lo llame Abstract, no Resumen
+\addcontentsline{toc}{section}{Abstract}%Para mostrar el abstract en el índice. Esta línea ha de ponerse junto al contenido a listar.
+\begin{abstract}
+En el presente estudio se tratará de hacer algo y este es el abstract
+\end{abstract}
+\begin{multicols}{2} %Ponemos 2 columnas. Hay que cerrarlo al final. Si queremos que no empiece una hasta acabar la anterior, ponemos \begin{multicols*}
+
+\section{Fundamento teórico}
+\subsection{Hipótesis de Planck}
+Planck\footnote{footnote de Planck} hizo el dibujo \eqref{etiqueta}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=3cm]{fotos/escudo}
+\caption{explicación dibujo \cite{referencia}}
+\label{etiqueta}
+\end{figure}
+
+Para poner fórmulas en medio del texto se hace ${\vartriangle}\varepsilon$ y para ponerlas separadas se hace como en la ecuación \eqref{ecuacion}
+\begin{equation}
+\Delta\varepsilon=h\nu
+\label{ecuacion}
+\end{equation} % {equation*} si no queremos numerarla
+
+
+\section{Realización experimental}
+\subsection{Montaje del experimento}
+dibujitos noseque
+
+\subsection{Consideraciones previas}
+\label{consideraciones}
+\begin{itemize}
+\item elemento de lista 1
+\item elemento de lista 2
+\end{itemize}
+
+\subsection{Realización del experimento}
+blablabla
+\section{Medidas y análisis de datos}
+\subsection{Interpretación de resultados}
+El experimento ha sido un éxito
+\subsection{Fuentes de errores}
+Pues hay muchos errores
+
+\end{multicols} %Se acaban las dobles columnas
+\section{Conclusiones}
+Las conclusiones son blablabla
+
+\newpage
+%\renewcommand{\refname}{Bibliografía} %Para que ponga eso en vez de referencias
+\addcontentsline{toc}{section}{Referencias} %Para mostrar las referencias en el índice. Esta línea ha de ponerse junto al contenido a listar.
+\begin{thebibliography}{99} %99 para que no de problemas de limitación
+\bibitem{referencia} Albert Einstein, Un punto de vista heurístico sobre la producción y transformación de la luz, \textit{Annalen der Physik} \textbf{17}, 132-148 (1905)
+\end{thebibliography}
+\end{document}
