@@ -16,7 +16,7 @@
 %\usepackage{bm} %Comando \bm{}, negritas en textos matemáticos
 
 \PassOptionsToPackage{hyphens}{url} %Para que los enlaces no se salgan del borde. Poner \sloppy\url{}
-\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=blue]{hyperref} %Hipervínculos, así como enlazar partes, citas, etc del mismo documento. Para enlaces: \href{https://www.youtube.com/}{Youtube}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=blue]{hyperref} %Hipervínculos, así como enlazar partes, citas, etc del mismo documento. Para enlaces: \href{https://www.youtube.com/}{Youtube} o bien \url{}
 
 \usepackage{multicol} %Para dividir el texto en columnas
 \usepackage{titlesec}
@@ -28,10 +28,10 @@
 \pagestyle{fancy} %Que use dicho formato
 \fancyhead{} %Eliminar definiciones previas 
 \fancyhead[c]{TITULO}
-\fancyhead[r]{Universidad de Valladolid}
+\fancyhead[r]{Universidad de Nosedonde}
 \fancyfoot{}
 \fancyfoot[r]{\thepage} %El comando \thepage pone la página
-\fancyfoot[l]{Pablo Gila Herranz}
+\fancyfoot[l]{John Marston}
 \renewcommand{\headrulewidth}{0.9pt} %Cambiar grosor línea arriba, o eliminarla (0pt)
 \renewcommand{\footrulewidth}{0.5pt} %Crear y editar línea de abajo
 
@@ -41,8 +41,8 @@
 \vspace*{2\baselineskip} %Avanza filas. Si está al principio, hay que poner *
 \hrule height 3pt
 \vspace*{0.5\baselineskip}
-{\Huge \textbf{Técnicas experimentales en Física III}}\\[0.1cm]
-{\large \textbf{UNIVERSIDAD DE VALLADOLID}}
+{\Huge \textbf{Técnicas experimentales en Brujería III}}\\[0.1cm]
+{\large \textbf{UNIVERSIDAD DE NOSEDONDE}}
 \vspace*{0.5\baselineskip}
 \hrule
 \vspace*{6\baselineskip}
@@ -50,7 +50,7 @@
 \vspace*{4.5\baselineskip}
 {\Huge \textbf{TÍTULO\\Y TÍTULO:\\[0.5cm]MÁS TÍTULO\\}}
 \vfill %Desplaza hasta el final de la página
-\textit{Pablo Gila Herranz}\\
+\textit{John Marston}\\
 %\today %Muestra la fecha
 \end{center}
 \end{titlepage}
@@ -120,5 +120,6 @@ Las conclusiones son blablabla
 \addcontentsline{toc}{section}{Referencias} %Para mostrar las referencias en el índice. Esta línea ha de ponerse junto al contenido a listar.
 \begin{thebibliography}{99} %99 para que no de problemas de limitación
 \bibitem{referencia} Albert Einstein, Un punto de vista heurístico sobre la producción y transformación de la luz, \textit{Annalen der Physik} \textbf{17}, 132-148 (1905)
+\bibitem{plantilla} Puedes encontrar la última versión de esta plantilla en \url{https://github.com/pablogila/PlantillaLatex}
 \end{thebibliography}
 \end{document}
