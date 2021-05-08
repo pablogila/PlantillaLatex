@@ -1,5 +1,6 @@
-# PlantillaLatex
-Plantilla a LaTeX para hacer un informe de laboratorio bien majo, con explicaciones de los comandos más importantes.
+Plantilla a LaTeX, con explicaciones y ejemplos de los comandos más importantes que necesitarás para hacer un informe bien majo.
 
-Primero descarga el .zip en el apartado Releases.
+Primero descarga el último .zip desde https://github.com/pablogila/PlantillaLatex/releases
 Edita el documento PlantillaLatex.tex e introduce las imágenes a usar en la carpeta /fotos
+
+Que aproveche :D
