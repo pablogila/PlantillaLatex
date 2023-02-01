@@ -1,22 +1,46 @@
+%  PlantillaLatex v2022.11.29 by Pablo Gila Herranz
+%  Encuentra la versión más reciente en:
+%  https://github.com/pablogila/PlantillaLatex/
+%  Que aproveche  :D
+
+
 \documentclass[12pt,a4paper]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%  PAQUETES  %%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%  TEXTO Y MATES  %%%%%%%%
+
 \usepackage[spanish,es-tabla]{babel} %Ponemos es-tabla para que en la tabla con label diga Tabla en vez de Cuadro
 \usepackage[T1]{fontenc} %Parece necesario para escribir > <
 \usepackage{amsmath,amssymb,amsfonts,latexsym,cancel} %Paquetes matemáticos
 \usepackage{mathtools} %Dividir ecuaciones con begin{multlined} parte1\\parte2 etc o bien con {split}, aunque queda más feo. Las llaves y corchetes dan problemas, hay que ponerlas por separado con \Bigg\{
+\usepackage{bm} %Comando \bm{}, negritas en textos matemáticos
+\usepackage{slashed} %si usas el comando \slashed puedes poner símbolos matemáticos tachados en ecuaciones
+
+%%%%%%%%%%  IMÁGENES  %%%%%%%%%%%%%
 
 \usepackage{graphicx} %Para poner imágenes
 \usepackage{float} %Para poner la imagen o tabla donde estamos con una H
 %\usepackage{subfigure} %Poner varias imágenes juntas, comando \subfigure
 %\usepackage{epstopdf} %Para usar fotos en formato .eps
 
+%%%%%%%%%%  COLUMNAS  %%%%%%%%%%%%
+
 %\usepackage{array} %Para usar m{ancho}, centrando verticalmente el texto de tablas
 %\usepackage{longtable} %Hacer tablas largas
 %\newcolumntype{E}{>{$} c <{$}} %Hemos creado un nuevo tipo de columna. ahora, al poner E (letra de nuestra elección) la columna correspondiente estará en modo matemático. DEPENDE DEL PACKAGE ARRAY.
 %\setcounter{MaxMatrixCols}{40} %Matrices con más columnas
-%\usepackage{bm} %Comando \bm{}, negritas en textos matemáticos
+
+%%%%%%%%%%%  ENLACES  %%%%%%%%%%%%
 
 \PassOptionsToPackage{hyphens}{url} %Para que los enlaces no se salgan del borde. Poner \sloppy\url{}
 \usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=blue]{hyperref} %Hipervínculos, así como enlazar partes, citas, etc del mismo documento. Para enlaces: \href{https://www.youtube.com/}{Youtube} o bien \url{}
+
+
+%%%%%%%%  FORMATO DE LAS HOJAS  %%%%%%
+%%%%%%%%%  edita esto con tus datos  %%%%%%%%
 
 \usepackage{multicol} %Para dividir el texto en columnas
 \usepackage{titlesec}
@@ -34,6 +58,10 @@
 \fancyfoot[l]{John Marston}
 \renewcommand{\headrulewidth}{0.9pt} %Cambiar grosor línea arriba, o eliminarla (0pt)
 \renewcommand{\footrulewidth}{0.5pt} %Crear y editar línea de abajo
+
+
+%%%%%%%%%%  PÁGINA DE TÍTULO  %%%%%%%%%
+%%%%%%%%%%  edita esto con tus datos  %%%%%%%
 
 \begin{document}
 \begin{titlepage} %Primera página aparte con el título
@@ -55,17 +83,40 @@
 \end{center}
 \end{titlepage}
 
+%%%%%%%%%%%  ÍNDICE  %%%%%%%%%%%
+
 \tableofcontents
 \thispagestyle{empty} %Quitar el formato en esta página
 \newpage
 \setcounter{page}{1} %Que no empiece la primera página en el índice
 
+
+%%%%%%%%%%%  ABSTRACT  %%%%%%%%%%%
+%%%%%%%%%%  Qué vas a hacer?  %%%%%%%%%
+
 \renewcommand{\abstractname}{Abstract} %Para que lo llame Abstract, no Resumen
 \addcontentsline{toc}{section}{Abstract}%Para mostrar el abstract en el índice. Esta línea ha de ponerse junto al contenido a listar.
+
 \begin{abstract}
 En el presente estudio se tratará de hacer algo y este es el abstract
 \end{abstract}
+
 \begin{multicols}{2} %Ponemos 2 columnas. Hay que cerrarlo al final. Si queremos que no empiece una hasta acabar la anterior, ponemos \begin{multicols*}
+
+
+%%%%%%%%%%  A ESCRIBIRRR  %%%%%%%%%
+
+%%%%%%%%% (pero antes...) %%%%%%%%%
+\iffalse
+Este comando sirve para comentar
+automáticamente párrafos enteros de texto,
+como por ejemplo este mismo.
+Puede ser útil para ocultar un borrador
+del documento, things to-do, etc.
+Para finalizar el comentario,
+acabar con el comando:
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Fundamento teórico}
 \subsection{Hipótesis de Planck}
@@ -79,17 +130,43 @@ Planck\footnote{footnote de Planck} hizo el dibujo \eqref{etiqueta}.
 \end{figure}
 
 Para poner fórmulas en medio del texto se hace ${\vartriangle}\varepsilon$ y para ponerlas separadas se hace como en la ecuación \eqref{ecuacion}
+
 \begin{equation}
 \Delta\varepsilon=h\nu
 \label{ecuacion}
 \end{equation} % {equation*} si no queremos numerarla
 
 Y por acá una ecuación en dos líneas con el comando multlined o split por si son demasiado largas:
+
 \begin{equation*}
 \begin{multlined}
 C=\frac{\tau}{R}=\frac{1.738\cdot10^{-4}s}{550\Omega}\\
 =3.16\cdot10^{-7}F=316nF
 \end{multlined}
+\end{equation*}
+
+Ojito a esto: MATRICES
+
+\begin{equation*}
+\begin{pmatrix}
+J_Q\\
+I
+\end{pmatrix}
+=
+\begin{pmatrix}
+L_{11} & L_{12}\\
+L_{21} & L_{22}
+\end{pmatrix}
+\begin{pmatrix}
+\frac{\Delta T}{T^2}\\
+\frac{\Delta \epsilon}{T}
+\end{pmatrix}
+\end{equation*}
+
+
+Ahora una cosa chunga que probablemente no uses nunca pero como de repente un día lo necesites igual te cuesta encontrarlo: con el comando slashed, del paquete slashed, podemos tachar símbolos matemáticos en ecuaciones, por ejemplo:
+\begin{equation*}
+\mathcal{L}=[\overline{\psi}_r^f(x)(i\slashed\partial-m_f)\psi_r^f(x)+\text{cosaschungas}]
 \end{equation*}
 
 \section{Realización experimental}
@@ -115,11 +192,17 @@ Pues hay muchos errores
 \section{Conclusiones}
 Las conclusiones son blablabla
 
+
+%%%%%%%%%%  BIBLIOGRAFÍA  %%%%%%%%%%
+
 \newpage
 %\renewcommand{\refname}{Bibliografía} %Para que ponga eso en vez de referencias
 \addcontentsline{toc}{section}{Referencias} %Para mostrar las referencias en el índice. Esta línea ha de ponerse junto al contenido a listar.
+
 \begin{thebibliography}{99} %99 para que no de problemas de limitación
 \bibitem{referencia} Albert Einstein, Un punto de vista heurístico sobre la producción y transformación de la luz, \textit{Annalen der Physik} \textbf{17}, 132-148 (1905)
 \bibitem{plantilla} Puedes encontrar la última versión de esta plantilla en \url{https://github.com/pablogila/PlantillaLatex}
+\bibitem{tutorial} Si quieres aprender \LaTeX te recomiendo echarle un ojo a los videotutos de \textit{Héctor Misael Bacilio Navarro} con los que aprendió el menda: \url{https://youtube.com/playlist?list=PLKRmVEXGjGWcUu0vv1wGNWI_xAtE_yiE_}
 \end{thebibliography}
+
 \end{document}
