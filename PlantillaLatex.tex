@@ -1,4 +1,4 @@
-%  PlantillaLatex v2022.11.29 by Pablo Gila Herranz
+%  PlantillaLatex v2023.02.18 by Pablo Gila Herranz
 %  Encuentra la versión más reciente en:
 %  https://github.com/pablogila/PlantillaLatex/
 %  Que aproveche  :D
@@ -10,63 +10,75 @@
 %%%%%%%%%%%  PAQUETES  %%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%  Comenta o descomenta los paquetes según los necesites:
+
 %%%%%%%%%%  TEXTO Y MATES  %%%%%%%%
 
-\usepackage[spanish,es-tabla]{babel} %Ponemos es-tabla para que en la tabla con label diga Tabla en vez de Cuadro
-\usepackage[T1]{fontenc} %Parece necesario para escribir > <
-\usepackage{amsmath,amssymb,amsfonts,latexsym,cancel} %Paquetes matemáticos
-\usepackage{mathtools} %Dividir ecuaciones con begin{multlined} parte1\\parte2 etc o bien con {split}, aunque queda más feo. Las llaves y corchetes dan problemas, hay que ponerlas por separado con \Bigg\{
-\usepackage{bm} %Comando \bm{}, negritas en textos matemáticos
-\usepackage{slashed} %si usas el comando \slashed puedes poner símbolos matemáticos tachados en ecuaciones
+%\renewcommand{\familydefault}{\sfdefault} % Para cambiar la fuente por defecto. Por ejemplo, por rmdefault (roman, por defecto en LaTeX), sfdefault (serif), ttdefault(monospace), etc.
+\usepackage[spanish,es-tabla]{babel} % Ponemos es-tabla para que en la tabla con label diga Tabla en vez de Cuadro
+\usepackage[T1]{fontenc} % Parece necesario para escribir > <
+\usepackage{amsmath,amssymb,amsfonts,latexsym,cancel} % Paquetes matemáticos
+\usepackage{mathtools} % Dividir ecuaciones con begin{multlined} parte1\\parte2 etc o bien con {split}, aunque queda más feo. Las llaves y corchetes dan problemas, hay que ponerlas por separado con \Bigg\{
+\usepackage{bm} % Comando \bm{}, negritas en textos matemáticos
+\usepackage{slashed} % si usas el comando \slashed puedes poner símbolos matemáticos tachados en ecuaciones
+\usepackage{xcolor} % Texto en colores con \textcolor{red}{TEXTO}. Más info y otros comandos: https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX
+
+%%%%%%%%%% BIBLIOGRAFÍA %%%%%%%%%%%
+
+%\usepackage[sorting=none]{biblatex}
+%\addbibresource{refsTFM.bib} % tu .bib de referencia, si es que tienes tus referencias así guardadas
 
 %%%%%%%%%%  IMÁGENES  %%%%%%%%%%%%%
 
-\usepackage{graphicx} %Para poner imágenes
-\usepackage{float} %Para poner la imagen o tabla donde estamos con una H
-%\usepackage{subfigure} %Poner varias imágenes juntas, comando \subfigure
-%\usepackage{epstopdf} %Para usar fotos en formato .eps
+\usepackage{graphicx} % Para poner imágenes
+\usepackage{float} % Para poner la imagen o tabla donde estamos con una H
+%\usepackage{subfigure} % Poner varias imágenes juntas, comando \subfigure
+%\usepackage{epstopdf} % Para usar fotos en formato .eps
+\usepackage{wrapfig}
 
 %%%%%%%%%%  COLUMNAS  %%%%%%%%%%%%
 
-%\usepackage{array} %Para usar m{ancho}, centrando verticalmente el texto de tablas
-%\usepackage{longtable} %Hacer tablas largas
-%\newcolumntype{E}{>{$} c <{$}} %Hemos creado un nuevo tipo de columna. ahora, al poner E (letra de nuestra elección) la columna correspondiente estará en modo matemático. DEPENDE DEL PACKAGE ARRAY.
-%\setcounter{MaxMatrixCols}{40} %Matrices con más columnas
+%\usepackage{array} % Para usar m{ancho}, centrando verticalmente el texto de tablas
+%\usepackage{longtable} % Hacer tablas largas
+%\newcolumntype{E}{>{$} c <{$}} % Hemos creado un nuevo tipo de columna. ahora, al poner E (letra de nuestra elección) la columna correspondiente estará en modo matemático. DEPENDE DEL PACKAGE ARRAY.
+%\setcounter{MaxMatrixCols}{40} % Matrices con más columnas
 
 %%%%%%%%%%%  ENLACES  %%%%%%%%%%%%
 
-\PassOptionsToPackage{hyphens}{url} %Para que los enlaces no se salgan del borde. Poner \sloppy\url{}
-\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=blue]{hyperref} %Hipervínculos, así como enlazar partes, citas, etc del mismo documento. Para enlaces: \href{https://www.youtube.com/}{Youtube} o bien \url{}
+\PassOptionsToPackage{hyphens}{url} % Para que los enlaces no se salgan del borde. Poner \sloppy\url{}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=blue]{hyperref} % Hipervínculos, así como enlazar partes, citas, etc del mismo documento. Para enlaces: \href{https://www.youtube.com/}{Youtube} o bien \url{}
 
 
-%%%%%%%%  FORMATO DE LAS HOJAS  %%%%%%
+%%%%%%%%%  FORMATO DE LAS HOJAS  %%%%%%%%%%%%
 %%%%%%%%%  edita esto con tus datos  %%%%%%%%
 
-\usepackage{multicol} %Para dividir el texto en columnas
+\usepackage{multicol} % Para dividir el texto en columnas
 \usepackage{titlesec}
-\titleformat{\section}[block]{\large\bfseries\centering}{\thesection.}{1mm}{} %Centra las secciones y las deja bonitas. REQUIERE TITLESEC
+\titleformat{\section}[block]{\large\bfseries\centering}{\thesection.}{1mm}{} % Centra las secciones y las deja bonitas. REQUIERE TITLESEC
 \titleformat{\subsection}[block]{\bfseries\centering}{\thesubsection.}{1mm}{}
-\usepackage[left=2cm,right=2cm,top=2.5cm,bottom=3cm]{geometry} %Limitar bordes. Puede ponerse también con lmargin, rmargin.
-\parindent =0cm %Cambiar todas las sangrías
-\usepackage{fancyhdr} %Un formato guay para papers
-\pagestyle{fancy} %Que use dicho formato
-\fancyhead{} %Eliminar definiciones previas 
+\usepackage[left=2cm,right=2cm,top=2.5cm,bottom=3cm]{geometry} % Limitar bordes. Puede ponerse también con lmargin, rmargin.
+\parindent =0cm % Cambiar todas las sangrías
+\usepackage{fancyhdr} % Un formato guay para papers
+\pagestyle{fancy} % Que use dicho formato
+\fancyhead{} % Eliminar definiciones previas 
 \fancyhead[l]{TITULO}
 \fancyhead[r]{Universidad de Nosedonde}
 \fancyfoot{}
-\fancyfoot[r]{\thepage} %El comando \thepage pone la página
+\fancyfoot[r]{\thepage} % El comando \thepage pone la página
 \fancyfoot[l]{John Marston}
-\renewcommand{\headrulewidth}{0.9pt} %Cambiar grosor línea arriba, o eliminarla (0pt)
-\renewcommand{\footrulewidth}{0.5pt} %Crear y editar línea de abajo
+\renewcommand{\headrulewidth}{0.9pt} % Cambiar grosor línea arriba, o eliminarla (0pt)
+\renewcommand{\footrulewidth}{0.5pt} % Crear y editar línea de abajo
 
 
-%%%%%%%%%%  PÁGINA DE TÍTULO  %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%  PÁGINA DE TÍTULO  %%%%%%%%%%%%%%%
 %%%%%%%%%%  edita esto con tus datos  %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-\begin{titlepage} %Primera página aparte con el título
-\begin{center} %Para centrar el texto
-\vspace*{2\baselineskip} %Avanza filas. Si está al principio, hay que poner *
+\begin{titlepage} % Primera página aparte con el título
+\begin{center} % Para centrar el texto
+\vspace*{2\baselineskip} % Avanza filas. Si está al principio, hay que poner *
 \hrule height 3pt
 \vspace*{0.5\baselineskip}
 {\Huge \textbf{Técnicas experimentales en Brujería III}}\\[0.1cm]
@@ -77,36 +89,43 @@
 \includegraphics[width=7cm]{fotos/escudo}\\
 \vspace*{4.5\baselineskip}
 {\Huge \textbf{TÍTULO\\Y TÍTULO:\\[0.5cm]MÁS TÍTULO\\}}
-\vfill %Desplaza hasta el final de la página
+\vfill % Desplaza hasta el final de la página
 \textit{John Marston}\\
-%\today %Muestra la fecha
+%\today % Muestra la fecha
 \end{center}
 \end{titlepage}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%  ÍNDICE  %%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \tableofcontents
-\thispagestyle{empty} %Quitar el formato en esta página
+\thispagestyle{empty} % Quitar el formato en esta página
 \newpage
-\setcounter{page}{1} %Que no empiece la primera página en el índice
+\setcounter{page}{1} % Que no empiece la primera página en el índice
 
 
-%%%%%%%%%%%  ABSTRACT  %%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%  ABSTRACT  %%%%%%%%%%%%%
 %%%%%%%%%%  Qué vas a hacer?  %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\renewcommand{\abstractname}{Abstract} %Para que lo llame Abstract, no Resumen
-\addcontentsline{toc}{section}{Abstract}%Para mostrar el abstract en el índice. Esta línea ha de ponerse junto al contenido a listar.
+\renewcommand{\abstractname}{Abstract} % Para que lo llame Abstract, no Resumen
+\addcontentsline{toc}{section}{Abstract} % Para mostrar el abstract en el índice. Esta línea ha de ponerse junto al contenido a listar.
 
 \begin{abstract}
 En el presente estudio se tratará de hacer algo y este es el abstract
 \end{abstract}
 
-\begin{multicols}{2} %Ponemos 2 columnas. Hay que cerrarlo al final. Si queremos que no empiece una hasta acabar la anterior, ponemos \begin{multicols*}
+\begin{multicols}{2} % Ponemos 2 columnas. Hay que cerrarlo al final. Si queremos que no empiece una hasta acabar la anterior, ponemos \begin{multicols*}
 
 
-%%%%%%%%%%  A ESCRIBIRRR  %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%  A ESCRIBIRRR  %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%% (pero antes...) %%%%%%%%%
+%%%%%%%%% (pero antes... un truquito!) %%%%%%%%%
 \iffalse
 Este comando sirve para comentar
 automáticamente párrafos enteros de texto,
@@ -116,10 +135,12 @@ del documento, things to-do, etc.
 Para finalizar el comentario,
 acabar con el comando:
 \fi
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Fundamento teórico}
+
 \subsection{Hipótesis de Planck}
+
 Planck\footnote{footnote de Planck} hizo el dibujo \eqref{etiqueta}.
 
 \begin{figure}[H]
@@ -163,18 +184,20 @@ L_{21} & L_{22}
 \end{pmatrix}
 \end{equation*}
 
-
 Ahora una cosa chunga que probablemente no uses nunca pero como de repente un día lo necesites igual te cuesta encontrarlo: con el comando slashed, del paquete slashed, podemos tachar símbolos matemáticos en ecuaciones, por ejemplo:
+
 \begin{equation*}
 \mathcal{L}=[\overline{\psi}_r^f(x)(i\slashed\partial-m_f)\psi_r^f(x)+\text{cosaschungas}]
 \end{equation*}
 
 \section{Realización experimental}
+
 \subsection{Montaje del experimento}
 dibujitos noseque
 
 \subsection{Consideraciones previas}
 \label{consideraciones}
+
 \begin{itemize}
 \item elemento de lista 1
 \item elemento de lista 2
@@ -188,21 +211,81 @@ El experimento ha sido un éxito
 \subsection{Fuentes de errores}
 Pues hay muchos errores
 
-\end{multicols} %Se acaban las dobles columnas
+\end{multicols} % Se acaban las dobles columnas
+
+
 \section{Conclusiones}
-Las conclusiones son blablabla
+
+Las conclusiones son blablabla. POR CIERTO!! Aprovecho que aquí en las conclusiones ya hemos acabado con el multicols, para contarte que podemos poner ecuaciones divididas en dos columnas usando precisamente multicols, en caso de que nuestro paper ocupe todo el ancho de la hoja y queramos aprovechar el espacio poniendo dos ecuaciones al lado:
+
+\begin{multicols}{2}
+\begin{equation}
+    \alpha_{m}=\frac{0.1(V_{m}+35)}{1-\exp(\frac{-(V_{m}+35)}{10})}
+    \label{ec:alpha_m}
+\end{equation}
+
+\begin{equation}
+    \beta_{h}=\frac{1}{1+\exp(-0.1(V_{m}+30))}
+    \label{ec:beta_h}
+\end{equation}
+\end{multicols}
+
+Ah, y otra cosa que te puede interesar. Se puede poner una imagen a un lado del texto, con el paquete \textbf{wrapfig}:
+
+\begin{wrapfigure}{l}{0.3\textwidth}
+\centering
+\includegraphics[width=2cm]{fotos/escudo.png}
+\caption{Caption}
+\end{wrapfigure}
+
+Esto es un ejemplo de una imagen al lateral de un texto utilizando el paquete wrapfig.\\
+En el código de latex, primero insertamos la figura con el comando begin\{wrapfigure\}, y seguidamente introducimos el texto que queremos que se sitúe al lateral de la imagen.\\
+Podemos editar la orden del wrapfigure modificando el tamaño que ocupará la imagen, por ejemplo, en este caso está puesto 0.4, pero podría ser 0.5, etc. Luego el texto sigue por donde debería ir en cuanto se acaba la figura, mira creo que ya debería haber acabado la figura. ¿ves? funciona perfectamente ole ole lo caracole un saludo chavales
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%  BIBLIOGRAFÍA  %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Para documentos con muchas referencias, como un TFG o un paper, es recomendable usar un gestor de referencias, como Zotero o Mendeley.
+% En serio, te puede salvar semanas de desesperación.
+% Desde Zotero puedes gestionar tus referencias con bibtex o biblatex (recomendado), te saca un archivo .bib que pones junto al .tex y te pone las referencias solas... pero el cómo hacer ese archivo .bib es otra movida, te lo googleas por tu cuenta.
+
 
 \newpage
-%\renewcommand{\refname}{Bibliografía} %Para que ponga eso en vez de referencias
-\addcontentsline{toc}{section}{Referencias} %Para mostrar las referencias en el índice. Esta línea ha de ponerse junto al contenido a listar.
+%\renewcommand{\refname}{Bibliografía} % Para que ponga eso en vez de referencias
+\addcontentsline{toc}{section}{Referencias} % Para mostrar las referencias en el índice. Esta línea ha de ponerse junto al contenido a listar.
 
-\begin{thebibliography}{99} %99 para que no de problemas de limitación
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Si usamos biblatex (RECOMENDADO) podemos printeaar la bibliografía con el siguiente comando, sin más vueltas de tuerca.
+% IMPORTANTE haber añadido arriba del todo los paquetes de biblatex!!
+% En caso de usar biblatex, se puede borrar el \addcontentsline{toc}{section}{Referencias}.
+% Meter la bibliografía es ultra fácil con biblatex, solo tienes que poner:
+
+%\printbibliography
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Si quisiera usar bibtex a secas, que ya viene integrado en LaTeX, sin usar paquetes extra:
+
+%\bibliographystyle{IEEEtran} % Estilo
+%\bibliography{refsTFM} % documento .bib
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Y si quisiera meter la bibliografía a mano, que es lo que seguramente haga la mayoría de la gente leyendo esto, pues es un coñazo monumental pero que sepas que se hace así:
+
+\begin{thebibliography}{99} % 99 para que no de problemas de limitación
+
 \bibitem{referencia} Albert Einstein, Un punto de vista heurístico sobre la producción y transformación de la luz, \textit{Annalen der Physik} \textbf{17}, 132-148 (1905)
+
 \bibitem{plantilla} Puedes encontrar la última versión de esta plantilla en \url{https://github.com/pablogila/PlantillaLatex}
+
 \bibitem{tutorial} Si quieres aprender \LaTeX te recomiendo echarle un ojo a los videotutos de \textit{Héctor Misael Bacilio Navarro} con los que aprendió el menda: \url{https://youtube.com/playlist?list=PLKRmVEXGjGWcUu0vv1wGNWI_xAtE_yiE_}
+
 \end{thebibliography}
+
 
 \end{document}
