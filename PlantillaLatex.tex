@@ -1,22 +1,39 @@
-%  PlantillaLatex v2023.02.18 by Pablo Gila Herranz
-%  Encuentra la versión más reciente en:
-%  https://github.com/pablogila/PlantillaLatex/
-%  Que aproveche  :D
+% PlantillaLatex v2023.02.18 by Pablo Gila Herranz
+% Encuentra la versión más reciente en:
+% https://github.com/pablogila/PlantillaLatex/
+% Que aproveche  :D
 
 
 \documentclass[12pt,a4paper]{article}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%  CUSTOM COMMANDS  %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Puedes crear tus propios comandos, para ahorrarte tiempo al escribir
+% Por ejemplo, para escribir el nombre de un elemento químico puedes hacer:
+\newcommand{\MA}{MAPbI$_3$}
+% O para poner imágenes más rápidamente:
+\newcommand{\NEWPIC}[3]{
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=#2]{fotos/#1}
+    \caption{#3}
+    \label{#1}
+    \end{figure}
+    }
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%  PAQUETES  %%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%  Comenta o descomenta los paquetes según los necesites:
+% Aquí pones los paquetes que vayas a usar en el documento.
+% Es recomendable comentar los paquetes que necesitas, para que no se carguen innecesariamente.
 
 %%%%%%%%%%  TEXTO Y MATES  %%%%%%%%
 
 %\renewcommand{\familydefault}{\sfdefault} % Para cambiar la fuente por defecto. Por ejemplo, por rmdefault (roman, por defecto en LaTeX), sfdefault (serif), ttdefault(monospace), etc.
 \usepackage[spanish,es-tabla]{babel} % Ponemos es-tabla para que en la tabla con label diga Tabla en vez de Cuadro
-\usepackage[T1]{fontenc} % Parece necesario para escribir > <
+\usepackage[T1]{fontenc} % Necesario para escribir > <
 \usepackage{amsmath,amssymb,amsfonts,latexsym,cancel} % Paquetes matemáticos
 \usepackage{mathtools} % Dividir ecuaciones con begin{multlined} parte1\\parte2 etc o bien con {split}, aunque queda más feo. Las llaves y corchetes dan problemas, hay que ponerlas por separado con \Bigg\{
 \usepackage{bm} % Comando \bm{}, negritas en textos matemáticos
@@ -26,15 +43,15 @@
 %%%%%%%%%% BIBLIOGRAFÍA %%%%%%%%%%%
 
 %\usepackage[sorting=none]{biblatex}
-%\addbibresource{refsTFM.bib} % tu .bib de referencia, si es que tienes tus referencias así guardadas
+%\addbibresource{refsTFM.bib} % tu .bib de referencia, si es que tienes tus referencias con biblatex
 
 %%%%%%%%%%  IMÁGENES  %%%%%%%%%%%%%
 
 \usepackage{graphicx} % Para poner imágenes
-\usepackage{float} % Para poner la imagen o tabla donde estamos con una H
+\usepackage{float} % Para poner la imagen o tabla donde estamos con una [H]
 %\usepackage{subfigure} % Poner varias imágenes juntas, comando \subfigure
 %\usepackage{epstopdf} % Para usar fotos en formato .eps
-\usepackage{wrapfig}
+\usepackage{wrapfig} % Para poner imágenes a un lateral del texto
 
 %%%%%%%%%%  COLUMNAS  %%%%%%%%%%%%
 
@@ -49,23 +66,25 @@
 \usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=blue]{hyperref} % Hipervínculos, así como enlazar partes, citas, etc del mismo documento. Para enlaces: \href{https://www.youtube.com/}{Youtube} o bien \url{}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%  FORMATO DE LAS HOJAS  %%%%%%%%%%%%
 %%%%%%%%%  edita esto con tus datos  %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{multicol} % Para dividir el texto en columnas
-\usepackage{titlesec}
+\usepackage{titlesec} % Para cambiar el formato de las secciones
 \titleformat{\section}[block]{\large\bfseries\centering}{\thesection.}{1mm}{} % Centra las secciones y las deja bonitas. REQUIERE TITLESEC
-\titleformat{\subsection}[block]{\bfseries\centering}{\thesubsection.}{1mm}{}
-\usepackage[left=2cm,right=2cm,top=2.5cm,bottom=3cm]{geometry} % Limitar bordes. Puede ponerse también con lmargin, rmargin.
+\titleformat{\subsection}[block]{\bfseries\centering}{\thesubsection.}{1mm}{} % Centra las subsecciones y las deja bonitas. REQUIERE TITLESEC
+\usepackage[left=2cm,right=2cm,top=2.5cm,bottom=3cm]{geometry} % Limitar márgenes. Puede ponerse también con lmargin, rmargin.
 \parindent =0cm % Cambiar todas las sangrías
 \usepackage{fancyhdr} % Un formato guay para papers
 \pagestyle{fancy} % Que use dicho formato
 \fancyhead{} % Eliminar definiciones previas 
-\fancyhead[l]{TITULO}
-\fancyhead[r]{Universidad de Nosedonde}
-\fancyfoot{}
+\fancyhead[l]{TITULO} % AQUÍ PONES EL TÍTULO DE TU TRABAJO
+\fancyhead[r]{Universidad de Nosedonde} % AQUÍ PONES TU UNIVERSIDAD
+\fancyfoot{} % Eliminar definiciones previas
 \fancyfoot[r]{\thepage} % El comando \thepage pone la página
-\fancyfoot[l]{John Marston}
+\fancyfoot[l]{John Marston} % AQUÍ PONES TU NOMBRE
 \renewcommand{\headrulewidth}{0.9pt} % Cambiar grosor línea arriba, o eliminarla (0pt)
 \renewcommand{\footrulewidth}{0.5pt} % Crear y editar línea de abajo
 
@@ -81,16 +100,16 @@
 \vspace*{2\baselineskip} % Avanza filas. Si está al principio, hay que poner *
 \hrule height 3pt
 \vspace*{0.5\baselineskip}
-{\Huge \textbf{Técnicas experimentales en Brujería III}}\\[0.1cm]
-{\large \textbf{UNIVERSIDAD DE NOSEDONDE}}
+{\Huge \textbf{Técnicas experimentales en Brujería III}}\\[0.1cm] % AQUÍ PONES LA ASIGNATURA
+{\large \textbf{UNIVERSIDAD DE NOSEDONDE}} % AQUÍ PONES TU UNIVERSIDAD
 \vspace*{0.5\baselineskip}
 \hrule
 \vspace*{6\baselineskip}
-\includegraphics[width=7cm]{fotos/escudo}\\
+\includegraphics[width=7cm]{fotos/escudo}\\ % AQUÍ PONES TU FOTO DE PORTADA
 \vspace*{4.5\baselineskip}
-{\Huge \textbf{TÍTULO\\Y TÍTULO:\\[0.5cm]MÁS TÍTULO\\}}
+{\Huge \textbf{TÍTULO\\Y TÍTULO:\\[0.5cm]MÁS TÍTULO\\}} % AQUÍ PONES EL TÍTULO DE TU TRABAJO
 \vfill % Desplaza hasta el final de la página
-\textit{John Marston}\\
+\textit{John Marston}\\ % AQUÍ PONES TU NOMBRE
 %\today % Muestra la fecha
 \end{center}
 \end{titlepage}
@@ -118,8 +137,6 @@
 En el presente estudio se tratará de hacer algo y este es el abstract
 \end{abstract}
 
-\begin{multicols}{2} % Ponemos 2 columnas. Hay que cerrarlo al final. Si queremos que no empiece una hasta acabar la anterior, ponemos \begin{multicols*}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%  A ESCRIBIRRR  %%%%%%%%%%%%%%%%
@@ -137,9 +154,12 @@ acabar con el comando:
 \fi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Fundamento teórico}
+\begin{multicols}{2} % Ponemos 2 columnas. Hay que cerrarlo al final. Si queremos que no empiece una columna hasta acabar la anterior, ponemos \begin{multicols*}
 
-\subsection{Hipótesis de Planck}
+
+\section{Introducción}
+
+\subsection{Fundamento teórico}
 
 Planck\footnote{footnote de Planck} hizo el dibujo \eqref{etiqueta}.
 
@@ -240,8 +260,11 @@ Ah, y otra cosa que te puede interesar. Se puede poner una imagen a un lado del 
 
 Esto es un ejemplo de una imagen al lateral de un texto utilizando el paquete wrapfig.\\
 En el código de latex, primero insertamos la figura con el comando begin\{wrapfigure\}, y seguidamente introducimos el texto que queremos que se sitúe al lateral de la imagen.\\
-Podemos editar la orden del wrapfigure modificando el tamaño que ocupará la imagen, por ejemplo, en este caso está puesto 0.4, pero podría ser 0.5, etc. Luego el texto sigue por donde debería ir en cuanto se acaba la figura, mira creo que ya debería haber acabado la figura. ¿ves? funciona perfectamente ole ole lo caracole un saludo chavales
-
+Podemos editar la orden del wrapfigure modificando el tamaño que ocupará la imagen, por ejemplo, en este caso está puesto 0.4, pero podría ser 0.5, etc. Luego el texto sigue por donde debería ir en cuanto se acaba la figura, mira creo que ya debería haber acabado la figura. ¿ves? funciona perfectamente ole ole lo caracole un saludo chavales.\\[0.5cm]
+POR CIERTO, os acordáis de que al principio habíamos definido comandos personalizados para poner ecuaciones o imágenes?? pues ahora los usamos, mira:\\
+Por un lado, la fórmula química: \MA \\
+Por otro, vamos a meter una foto rápidamente con nuestro custom command:
+\NEWPIC{escudo}{5cm}{descripción de la imagen}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
