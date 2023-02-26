@@ -17,7 +17,7 @@
 \newcommand{\NEWPIC}[3]{
 \begin{figure}[H]
     \centering
-    \includegraphics[width=#2]{fotos/#1}
+    \includegraphics[width=#2\textwidth]{fotos/#1}
     \caption{#3}
     \label{#1}
     \end{figure}
@@ -264,7 +264,7 @@ Podemos editar la orden del wrapfigure modificando el tamaño que ocupará la im
 POR CIERTO, os acordáis de que al principio habíamos definido comandos personalizados para poner ecuaciones o imágenes? pues ahora los usamos, mira:\\
 Por un lado, la fórmula química: {\MA}
 Por otro, vamos a meter una foto rápidamente con nuestro custom command:
-\NEWPIC{escudo}{5cm}{descripción de la imagen}
+\NEWPIC{escudo}{0.5}{descripción de la imagen}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
