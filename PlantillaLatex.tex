@@ -317,4 +317,20 @@ Por otro, vamos a meter una foto rápidamente con nuestro custom command:
 \end{thebibliography}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%  ANEXOS  %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Para poner anexos, nombrados en el índice como A1, A2, etc.
+% Como estamos jugando con el renewcommand, este anexo debe ir al final del documento, después de la bibliografía, para no liarla.
+
+\renewcommand{\thesection}{A\arabic{section}}
+\renewcommand{\thesubsection}{A\arabic{subsection}}
+\section*{Supplementary}\addcontentsline{toc}{section}{Anexo}
+
+\subsection{un anexo}
+
+\subsection{más anexos}
+
+
 \end{document}
