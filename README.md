@@ -12,7 +12,7 @@ Descarga o copia el texto del último archivo `PlantillaLatex.tex` y edítalo a 
 
 Entre otras, se incluyen explicaciones sobre:
 
-* Cómo crear comandos personalizados, por ejemplo para poner imágenes en una línea, etc
+* Cómo crear comandos personalizados, por ejemplo para poner imágenes más rápido, etc
 * Introducir imágenes, ya sea centradas, al margen del texto, subimágenes...
 * Montones de paquetes matemáticos y de texto: dividir ecuaciones en varias líneas, tacharlas, mates en negrita, ejemplos de ecuaciones, matrices, texto en color, dividir el documento en columnas...
 * Hipervínculos, urls, o enlazar citas sobre el propio documento
