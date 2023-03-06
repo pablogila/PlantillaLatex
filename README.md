@@ -5,7 +5,7 @@ Esta es una plantilla a $\LaTeX$, con explicaciones y ejemplos de los comandos m
 
 ## Instrucciones
 
-Descarga o copia el texto del último archivo PlantillaLatex.tex y edítalo a tu gusto y forma. En esta plantilla, las imágenes a usar van por defecto en la carpeta /fotos
+Descarga o copia el texto del último archivo `PlantillaLatex.tex` y edítalo a tu gusto y forma. En esta plantilla, las imágenes a usar van por defecto en la carpeta `/fotos`
 
 
 ## Lo que incluye
