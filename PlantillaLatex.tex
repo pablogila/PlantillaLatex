@@ -1,6 +1,5 @@
-% PlantillaLatex v2023.02.26 by Pablo Gila Herranz
-% Encuentra la versión más reciente en:
-% https://github.com/pablogila/PlantillaLatex/
+% PlantillaLatex v2023.03.17 by Pablo Gila Herranz, MIT License
+% Encuentra la versión más reciente en https://github.com/pablogila/PlantillaLatex/
 % Que aproveche  :D
 
 
@@ -134,12 +133,11 @@
 %%%%%%%%%%  Qué vas a hacer?  %%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\renewcommand{\abstractname}{Abstract} % Para que lo llame Abstract, no Resumen
-\addcontentsline{toc}{section}{Abstract} % Para mostrar el abstract en el índice. Esta línea ha de ponerse junto al contenido a listar.
-
-\begin{abstract}
-En el presente estudio se tratará de hacer algo y este es el abstract
-\end{abstract}
+%\thispagestyle{empty}
+\addcontentsline{toc}{section}{Abstract}
+\section*{\centering Abstract}
+En el presente estudio se realizará un estudio y en el abstract va un resumen de ese estudio que va a ser estudiado
+%\newpage
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
