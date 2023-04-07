@@ -42,6 +42,7 @@
 \usepackage{bm} % Comando \bm{}, negritas en textos matemáticos
 \usepackage{slashed} % si usas el comando \slashed puedes poner símbolos matemáticos tachados en ecuaciones
 \usepackage{xcolor} % Texto en colores con \textcolor{red}{TEXTO}. Más info y otros comandos: https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX
+%\numberwithin{equation}{section} % Reinicia el contador de ecuaciones al empezar una nueva sección
 
 %%%%%%%%%% BIBLIOGRAFÍA %%%%%%%%%%%
 
@@ -328,7 +329,7 @@ Por otro, vamos a meter una foto rápidamente con nuestro custom command:
 
 \renewcommand{\thesection}{A\arabic{section}}
 \renewcommand{\thesubsection}{A\arabic{subsection}}
-\section*{Supplementary}\addcontentsline{toc}{section}{Anexo}
+\section*{Anexo}\addcontentsline{toc}{section}{Anexo}
 
 \subsection{un anexo}
 
