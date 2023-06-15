@@ -1,4 +1,4 @@
-% PlantillaLatex v2023.05.10 by Pablo Gila Herranz, MIT License
+% PlantillaLatex v2023.06.15 by Pablo Gila Herranz, MIT License
 % Encuentra la versión más reciente en https://github.com/pablogila/PlantillaLatex/
 % Que aproveche  :D
 
@@ -15,12 +15,22 @@
 \newcommand{\MA}{MAPbI$_3$}
 
 % O para poner imágenes más rápidamente:
-% \NEWPIC{FOTO}{ANCHO}{LEYENDA} 
+% \NEWPIC{FOTO}{ANCHO}{CAPTION} 
 \newcommand{\NEWPIC}[3]{
 \begin{figure}[H]
     \centering
     \includegraphics[width=#2\textwidth]{fotos/#1}
     \caption{#3}
+    \label{#1}
+    \end{figure}
+    }
+
+% Poner imágenes, sin caption:
+% \NEWPIC{FOTO}{ANCHO}
+\newcommand{\NEWPICC}[2]{
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=#2\textwidth]{pictures/#1}
     \label{#1}
     \end{figure}
     }
